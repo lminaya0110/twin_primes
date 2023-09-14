@@ -8,11 +8,7 @@ def is_prime(candidate):
 
 
 def find_twin_primes(upper_bound):
-    twin_primes = []
-    for num in range(2, upper_bound):
-        second = num + 2
-        if is_prime(num) and is_prime(second):
-            twin_primes.append( (num,second) )
+    twin_primes = [ (num, num + 2) for num in range(2, bound) if is_prime(num) and is_prime(num+2)]
     return twin_primes
 
 bound = 1_000
